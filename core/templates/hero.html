@@ -1,0 +1,31 @@
+{% load static %}
+<div id="hero-area" class="hero-area-bg">
+  {% if messages %}
+    <div class="container-mensagens">
+      {% for message in messages %}
+        <div class="alert alert-{{ message.tags }}" role="alert">
+          {{ message }}
+        </div>
+      {% endfor %}
+    </div>
+  {% endif %}
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-7 col-md-12 col-sm-12 col-xs-12">
+          <div class="contents">
+            <h2 class="head-title">Construa aplicativos para monitoramento de criminosos</h2>
+            <p>Os nossos serviços permitem monitorar criminosos através de tornozeleiras eletrônicas e reconhecimento facial. Estamos integrados a base de dados de todos os sistemas de segurança do Brasil.</p>
+            <div class="header-button">
+              <a href="#" class="btn btn-common">Download</i></a>
+              <a href="#" class="btn btn-border video-popup">Saiba mais</i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-5 col-md-12 col-sm-12 col-xs-12">
+          <div class="intro-img">
+            <img class="img-fluid" src="{% static 'img/intro-mobile.png' %}" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

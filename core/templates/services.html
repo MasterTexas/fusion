@@ -1,0 +1,51 @@
+{% load static %}
+<section id="services" class="section-padding">
+    <div class="container">
+      <div class="section-header text-center">
+        <h2 class="section-title wow fadeInDown" data-wow-delay="0.3s">Nossos Serviços</h2>
+        <div class="shape wow fadeInDown" data-wow-delay="0.3s"></div>
+      </div>
+      <div class="row">
+
+        {% for s in servicos %}
+        <div class="col-md-6 col-lg-4 col-xs-12">
+          <div class="services-item wow fadeInRight" data-wow-delay="0.3s">
+            <div class="icon">
+              <i class="{{ s.icone }}"></i>
+            </div>
+            <div class="services-content">
+              <h3><a href="#">{{ s.servico }}</a></h3>
+              <p>{{ s.descricao }}</p>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+
+      </div>
+    </div>
+  </section>
+  <div class="about-area section-padding bg-gray">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 col-md-12 col-xs-12 info">
+          <div class="about-wrapper wow fadeInLeft" data-wow-delay="0.3s">
+            <div>
+              <div class="site-heading">
+                <p class="mb-3">Prestação de serviços</p>
+                <h2 class="section-title">Qualidade no serviço pelas forças de segurança.</h2>
+              </div>
+              <div class="content">
+                <p>
+                  Estamos presentes em todas as polícias do Brasil. Desenvolvendo aplicativos para as diversas atividades operacionais e administrativas das instituições. Nosso objetivo é garantir maior qualidade na prestação de serviço de segurança pública.
+                </p>
+                <a href="#" class="btn btn-common mt-3">Leia mais</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-12 col-xs-12 wow fadeInRight" data-wow-delay="0.3s">
+          <img class="img-fluid" src="{% static 'img/about/img-1.png' %}" alt="" >
+        </div>
+      </div>
+    </div>
+  </div>
