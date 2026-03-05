@@ -167,3 +167,6 @@ if 'RENDER' in os.environ:
             "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
         },
     }
+
+WHITENOISE_KEEP_ONLY_HASHED_FILES = True
+WHITENOISE_MANIFEST_STRICT = False
