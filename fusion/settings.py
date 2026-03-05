@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'core',
+    'cloudinary_storage',
+    'cloudinary',
 ]
 
 MIDDLEWARE = [
@@ -150,3 +152,11 @@ else:
     # 2. DESENVOLVIMENTO (Seu PC): Não envia e-mail de verdade.
     # Ele apenas imprime o texto do e-mail no terminal do PyCharm para você testar.
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+if 'RENDER' in os.environ:
+    CLOUDINARY_STORAGE = {
+        'API_KEY': os.environ.get('API_KEY'),
+        'API_SECRET': os.environ.get('API_SECRET'),
+        'CLOUD_NAME': os.environ.get('CLOUD_NAME'),
+    }
+    DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
