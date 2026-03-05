@@ -159,4 +159,11 @@ if 'RENDER' in os.environ:
         'API_SECRET': os.environ.get('API_SECRET'),
         'CLOUD_NAME': os.environ.get('CLOUD_NAME'),
     }
-    DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+    STORAGES = {
+        "default": {
+            "BACKEND": "cloudinary_storage.storage.MediaCloudinaryStorage",
+        },
+        "staticfiles": {
+            "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+        },
+    }
